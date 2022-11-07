@@ -21,10 +21,27 @@ public class HtmlController {
     }
 
     /**
-     * 创建网页
+     * 新增一条
      * */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public Object createMapHtml(@RequestBody CreateMap createMap ) {
+    public Object add(@RequestBody CreateMap createMap ) {
         return htmlService.createMapHtml(createMap);
+    }
+
+
+    /**
+     * 删除一条
+     * */
+    @RequestMapping(value = "/deleteCell", method = RequestMethod.POST)
+    public Object deleteCell(@RequestBody CreateMap createMap ) {
+        return htmlService.deleteCell(createMap);
+    }
+
+    /**
+     * 获取日期
+     * */
+    @RequestMapping(value = "/getData", method = RequestMethod.POST)
+    public String getData() {
+        return htmlService.getData();
     }
 }
